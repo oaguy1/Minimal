@@ -1,0 +1,12 @@
+<h1>Login for {{blog_title}}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'blog:login' user.id %}" method="post">
+    {% csrf_token %}
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" value=" " /><br />
+    <label for="password">Password</label>
+    <input type="text" name="password" id="password" value " " /><br />
+    <input type="submit" value="Login" />
+</form>

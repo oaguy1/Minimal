@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}" />
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700,100' rel='stylesheet' type='text/css'>
+
+<div id="body">
+    <div id="header">
+        {% if blog %}
+        <h1 id="blog_title">{{ blog.title }}</h1>
+        {% else %}
+        <h1 id ="blog_title">Untitled</h1>
+        {% endif %}
+        {% if author %}
+        <p id=author>{{ author }}</p>
+        {% endif %}
+    </div>
+    <div id="post list">
+        {% if latest_post_list %}
+        {% for post in latest_post_list %}
+        <h2><a id="post_title" href="/blog/{{ post.pub_date.year }}/{{ post.pub_date.month }}/{{ post.pub_date.day }}/{{ post.slug }}">{{ post.title }}</a></h2>
+        <p id="pub_date">Published on: {{ post.pub_date.month }}/{{ post.pub_date.day }}/{{ post.pub_date.year }}</p>
+        {{ post.body|truncatewords_html:"20"|safe }}
+        {% endfor %}
+        {% else %}
+        <p>You currently don't have any posts, log-in and upload your posts to start blogging</p>
+        {% endif %}
+    </div>
+</div>

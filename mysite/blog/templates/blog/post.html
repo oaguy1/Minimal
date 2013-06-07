@@ -1,0 +1,13 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}" />
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700,100' rel='stylesheet' type='text/css'>
+
+<div id="body">
+    <div id="header">
+        <h1>{{ post_title }}</h1>
+        <p id="author">Published by {{ post_author }} on {{ post_date }}</p>
+    </div>
+    <div id="post_body">
+        {{ post_body|safe }}
+    </div>
+</div>

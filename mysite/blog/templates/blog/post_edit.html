@@ -1,0 +1,14 @@
+<h1>{{ Write a post }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'blog:post' post.id %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="title" id="title" value="Post Title" />
+    <label for="title">Post Title</label>
+
+    <textarea name="body" id="body"  rows="10" cols="30">
+        Just start writing...
+    </textarea>
+    <input type="submit" value="Post" />
+</form>

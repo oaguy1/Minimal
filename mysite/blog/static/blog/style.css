@@ -1,0 +1,47 @@
+body {
+    background-color: #F5F5F5;
+    color: #2F4F4F;
+    font-family: 'Roboto Slab', serif;
+}
+
+div#body {
+    width: 500px;
+    margin-left: auto ;
+    margin-right: auto ;
+}
+
+div#header {
+    text-align: center;
+}
+
+h1#blog_title {
+    font-size: 32px;
+}
+
+a#post_title:link {
+    font-size: 24px;
+    text-decoration: none;
+    padding: 0px;
+}
+
+a#post_title:visited {
+    font-size: 24px;
+    text-decoration: none;
+    padding: 0px;
+}
+
+a#post_title:hover {
+    font-size: 24px;
+    text-decoration: none;
+    padding: 0px;
+}
+
+p#pub_date {
+    font-style: italic;
+    color: #696969;
+}
+
+p#author {
+    font-size: 90%;
+    font-style: italic;
+}
